@@ -1,0 +1,47 @@
+body {
+  background-image: url("http://www.pixelstalk.net/wp-content/uploads/2016/05/Wonderful-Gradient-Wallpaper.jpg");
+}
+
+body {
+  text-align: center;
+}
+
+
+h1 {
+  font-family: 'Dosis', sans-serif;
+  font-weight: 500;
+}
+
+h1 {
+  color: black;
+}
+
+
+p {
+  color: black;
+}
+
+p {
+  font-family: 'Overlock', sans-serif;
+  font-weight: 3000;
+}
+
+p {
+  border-style: groove;
+  border-width: 19px;
+  border-color: purple grey red grey;
+}
+
+p {
+    background-color: lightblue;
+}
+
+
+body {
+    background-color: lightblue;
+}
+
+form {
+    background-color: white;
+}
+
