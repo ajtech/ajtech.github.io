@@ -5,10 +5,13 @@
 
 <link rel="hello" type="text/CSS" href="hello.css">
 
-
-<h1>California National Parks and Federal Recreational Lands (NPS, BLM, and FWS)</h1>
-
-<iframe src="20160913120044-59104-map.html" width="1321" height="550" align="center"></iframe>
+mapboxgl.accessToken = 'pk.eyJ1IjoiYWp0ZWNoIiwiYSI6ImNpcW9kNmk0MzAxamFnbmpmYXI1aDB2ODkifQ.uqzMJErYGsvAA6NXYZEy-g'; // your access token
+var map = new mapboxgl.Map({
+  container: 'map', // container id
+  style: 'mapbox://styles/ajtech/ciyxgcmiq000v2srlbfunmtxu', // your style URL
+  center: [-74.50, 40], // starting position
+  zoom: 9 // starting zoom
+});
 
 <h5>Notes:</h5>
 
