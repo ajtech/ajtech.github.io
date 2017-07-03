@@ -1,28 +1,1038 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
-
-<title>California National Parks and Federal Lands Maps</title>
 <head>
-
-<script src='https://api.mapbox.com/mapbox-gl-js/v0.33.0/mapbox-gl.js'></script>
-<link href='https://api.mapbox.com/mapbox-gl-js/v0.33.0/mapbox-gl.css' rel='stylesheet' />  
-
-  <h1>California National Parks and Federal Lands Maps</h1>
-  </head>
-
+    <meta charset='utf-8' />
+    <title></title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.38.0/mapbox-gl.css' rel='stylesheet' />
+    <style>
+        body { margin:0; padding:0; }
+        #map { position:absolute; top:0; bottom:0; width:100%; }
+    </style>
+</head>
 <body>
-  
-  <div id='map' style='width: 1500px; height: 500px;'></div>
+
+<div id='map'></div>
 <script>
 mapboxgl.accessToken = 'pk.eyJ1IjoiYWp0ZWNoIiwiYSI6ImNpcW9kNmk0MzAxamFnbmpmYXI1aDB2ODkifQ.uqzMJErYGsvAA6NXYZEy-g';
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/ajtech/ciyxgcmiq000v2srlbfunmtxu'
+    style: 'mapbox://styles/mapbox/outdoors-v10',
+    center: [-96, 37.8],
+    zoom: 3
+});
+
+map.on('load', function () {
+
+    map.addLayer({
+        "id": "points",
+        "type": "symbol",
+        "source": {
+            "type": "geojson",
+            "data": {
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.065137,
+          40.632701,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Headwaters Forest Reserve",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/Headwaters_ForestReserve.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.211355,
+          40.688705,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Humboldt Bay National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/humboldt_bay/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.004628,
+          41.213179,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Redwood National and State Parks",
+        "description": "NPS https://www.nps.gov/redw/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.509816,
+          41.714222,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Lava Beds National Monument",
+        "description": "NPS https://www.nps.gov/labe/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.513284,
+          41.894214,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Tule Lake National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/tule_lake/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.545962,
+          41.47185,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Modoc National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/modoc/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.711193,
+          41.948679,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Lower Klamath National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/lower_klamath/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.520657,
+          38.865542,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Berryessa Snow Mountain National Monument",
+        "description": "USFS/BLM http://www.blm.gov/ca/st/en/prog/nlcs/Berryessa_Snow_Mountain.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -124.143653,
+          40.147701,
+          0
+        ]
+      },
+      "properties": {
+        "name": "King Range National Conservation Area",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/King_Range_NCA.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.163252,
+          39.406445,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Sacramento National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/sacramento/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.750891,
+          39.066876,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Sutter National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/sutter/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.095106,
+          39.29679,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Delevan National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/delevan/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.052494,
+          39.153209,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Colusa National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/colusa/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -123.723185,
+          38.936396,
+          0
+        ]
+      },
+      "properties": {
+        "name": "California Coastal National Monument",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/California_Coastal_NM.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.420655,
+          40.49766,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Lassen Volcanic National Park",
+        "description": "NPS https://www.nps.gov/lavo/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.573149,
+          40.612565,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Whiskeytown National Recreation Area",
+        "description": "NPS https://www.nps.gov/whis/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.476973,
+          37.81062,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Fort Point NHS",
+        "description": "NPS https://www.nps.gov/fopo/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.578071,
+          37.895369,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Muir Woods National Monument",
+        "description": "NPS https://www.nps.gov/muwo/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.42415,
+          37.807743,
+          0
+        ]
+      },
+      "properties": {
+        "name": "San Francisco Maritime National Historical Park",
+        "description": "NPS https://www.nps.gov/safr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.79843,
+          38.043955,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Point Reyes National Seashore",
+        "description": "NPS https://www.nps.gov/pore/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.130923,
+          37.99215,
+          0
+        ]
+      },
+      "properties": {
+        "name": "John Muir National Historic Site",
+        "description": "NPS https://www.nps.gov/jomu/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.02973,
+          38.057502,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Port Chicago Naval Magazine National Memorial",
+        "description": "NPS https://www.nps.gov/poch/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.027184,
+          37.826009,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Eugene O'Neill National Historic Site",
+        "description": "NPS https://www.nps.gov/euon/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.35732,
+          37.909763,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Rosie the Riveter WWII Home Front National Historical Park",
+        "description": "NPS https://www.nps.gov/rori/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.071566,
+          37.532168,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Don Edwards San Francisco Bay National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/don_edwards_san_francisco_bay/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.463694,
+          38.140338,
+          0
+        ]
+      },
+      "properties": {
+        "name": "San Pablo Bay National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/san_pablo_bay/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.182492,
+          36.490566,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Pinnacles National Park",
+        "description": "NPS https://www.nps.gov/pinn/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.738815,
+          36.617181,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Fort Ord National Monument",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/Fort_Ord_NM.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.838409,
+          37.232691,
+          0
+        ]
+      },
+      "properties": {
+        "name": "San Luis National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/san_luis/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.800741,
+          36.739011,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Salinas River National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/salinas_river/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.199671,
+          37.625683,
+          0
+        ]
+      },
+      "properties": {
+        "name": "San Joaquin River National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/san_joachim_river/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.863297,
+          35.189864,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Carrizo Plain National Monument",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/Carrizo_Plain_NM.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.900992,
+          33.873415,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Joshua Tree National Park",
+        "description": "NPS https://www.nps.gov/jotr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.773939,
+          34.045192,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Sand to Snow National Monument",
+        "description": "BLM/USFS http://www.blm.gov/ca/st/en/prog/nlcs/Sand-to-Snow.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.584412,
+          34.410875,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Mojave Trails National Monument",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/Mojave_Trails.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.372171,
+          33.606211,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Santa Rosa and San Jacinto Mountains National Monument",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/SantaRosa_SanJacintoMtns_NM.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.473355,
+          35.010991,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Mojave National Preserve",
+        "description": "NPS https://www.nps.gov/moja/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.769163,
+          33.996074,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Channel Islands National Park",
+        "description": "NPS https://www.nps.gov/chis/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.562268,
+          35.228209,
+          0
+        ]
+      },
+      "properties": {
+        "name": "César Chávez National Monument",
+        "description": "NPS https://www.nps.gov/cech/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.615202,
+          33.17752,
+          0
+        ]
+      },
+      "properties": {
+        "name": "The Sonny Bono Salton Sea National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/sonny_bono_salton_sea/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.125924,
+          32.557054,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Tijuana Slough National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/tijuana_slough/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.110262,
+          32.638803,
+          0
+        ]
+      },
+      "properties": {
+        "name": "San Diego Bay National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/san_diego_bay/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.853854,
+          34.45943,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Hopper Mountain National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/hopper_mountain/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.242519,
+          32.673543,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Cabrillo National Monument",
+        "description": "NPS https://www.nps.gov/cabr/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -116.955807,
+          32.694446,
+          0
+        ]
+      },
+      "properties": {
+        "name": "San Diego National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/san_diego/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.707421,
+          34.102916,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Santa Monica Mountains National Recreation Area",
+        "description": "NPS https://www.nps.gov/samo/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -115.077664,
+          35.316639,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Castle Mountains National Monument",
+        "description": "NPS https://www.nps.gov/camo/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.83888,
+          34.25,
+          0
+        ]
+      },
+      "properties": {
+        "name": "San Gabriel National Monument",
+        "description": "USFS http://www.fs.fed.us/visit/san-gabriel-mountains-national-monument"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.284329,
+          35.665637,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Piedras Blancas Light Station Outstanding Natural Area",
+        "description": "BLM http://www.blm.gov/ca/st/en/prog/nlcs/PBLS.html"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -117.079408,
+          36.505389,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Death Valley National Park",
+        "description": "NPS https://www.nps.gov/deva/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.538329,
+          37.865101,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Yosemite National Park",
+        "description": "NPS https://www.nps.gov/yose/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -119.087617,
+          37.615889,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Devils Postpile National Monument",
+        "description": "NPS https://www.nps.gov/depo/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.495495,
+          38.370969,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Stone Lakes National Wildlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/stone_lakes/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.825554,
+          36.490699,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Sequoia & Kings Canyon National Park",
+        "description": "NPS https://www.nps.gov/seki/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.152789,
+          36.727229,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Manzanar National Historic Site",
+        "description": "NPS https://www.nps.gov/manz/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -120.627187,
+          37.178412,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Merced National Wldlife Refuge",
+        "description": "FWS https://www.fws.gov/refuge/merced/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -118.9682,
+          36.7701,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Giant Sequoia National Monument",
+        "description": "USFS http://www.fs.usda.gov/detail/sequoia/home/?cid=stelprdb5394941"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.502535,
+          37.716301,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Fort Funston"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.466194,
+          37.798874,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Presidio",
+        "description": "https://www.nps.gov/prsf/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.499704,
+          37.826192,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Marin Headlands"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.422956,
+          37.826978,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Alcatraz Island"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.474952,
+          37.807749,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Golden Gate Bridge Welcome Center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.524668,
+          37.830888,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Marin Headlands Visitors Center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.511794,
+          37.779755,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Lands End Lookout Visitor Center"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.456085,
+          37.801204,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Presidio Visitor Center",
+        "description": "https://www.nps.gov/prsf/"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -122.420257,
+          37.80725,
+          0
+        ]
+      },
+      "properties": {
+        "name": "Pacific West Regional Visitor Center"
+      }
+    }
+  ]
+}
+                }]
+            }
+        },
+        "layout": {
+            "icon-image": "{icon}-15",
+            "text-field": "{title}",
+            "text-font": ["Open Sans Semibold", "Arial Unicode MS Bold"],
+            "text-offset": [0, 0.6],
+            "text-anchor": "top"
+        }
+    });
 });
 </script>
 
-
-  </body>
-
-
+</body>
+</html>
 
