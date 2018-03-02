@@ -55,8 +55,8 @@
     // increase intensity as zoom level increases
     'heatmap-intensity': {
       stops: [
-        [11, 1],
-        [15, 3]
+        [11, 2],
+        [15, 5]
       ]
     },
     // assign color values be applied to points depending on their density
@@ -73,16 +73,16 @@
     // increase radius as zoom increases
     'heatmap-radius': {
       stops: [
-        [11, 15],
-        [15, 20]
+        [11, 20],
+        [15, 35]
       ]
     },
     // decrease opacity to transition into the circle layer
     'heatmap-opacity': {
       default: 1,
       stops: [
-        [14, 1],
-        [15, 0]
+        [13, 1],
+        [14, 0]
       ]
     },
   }
@@ -99,8 +99,8 @@
       property: 'ele',
       type: 'exponential',
       stops: [
-        [{ zoom: 15, value: 1 }, 5],
-        [{ zoom: 15, value: 62 }, 10],
+        [{ zoom: 14, value: 1 }, 5],
+        [{ zoom: 14, value: 1000 }, 10],
         [{ zoom: 22, value: 1 }, 20],
         [{ zoom: 22, value: 62 }, 50],
       ]
@@ -122,8 +122,8 @@
     'circle-stroke-width': 1,
     'circle-opacity': {
       stops: [
-        [14, 0],
-        [15, 1]
+        [13, 0],
+        [14, 1]
       ]
     }
   }
