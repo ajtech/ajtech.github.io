@@ -91,7 +91,7 @@
   map.addLayer({
   id: 'trees-point',
   type: 'circle',
-  source: 'peaks',
+  source: 'peak',
   minzoom: 14,
   paint: {
     // increase the radius of the circle as the zoom level and dbh value increases
@@ -132,7 +132,7 @@
        map.on('click', 'trees-point', function(e) {
   new mapboxgl.Popup()
     .setLngLat(e.features[0].geometry.coordinates)
-    .setHTML('<b>Elevation:</b> ' + e.features[0].properties.dbh)
+    .setHTML('<b>Elevation:</b> ' + e.features[0].properties.ele)
     .addTo(map);
 });
 
