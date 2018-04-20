@@ -6,4 +6,33 @@ var mymap = L.map('mapid').setView([37.589518, -122.316996], 9);
   	  accessToken: 'pk.eyJ1IjoiYWp0ZWNoIiwiYSI6ImNpcW9kNmk0MzAxamFnbmpmYXI1aDB2ODkifQ.uqzMJErYGsvAA6NXYZEy-g'
 	}).addTo(mymap);
 
-L.geoJSON(geojsonFeature).addTo(mapid);
+var iconLayersControl = new L.Control.IconLayers(
+    [
+        {
+            title: 'Map', // use any string
+            layer: mapLayer, // any ILayer
+            icon: 'img/mapIcon.png' // 80x80 icon
+        },
+        {
+            title: 'Satellite',
+            layer: satLayer,
+            icon: 'img/mapIcon.png'
+        }
+    ], {
+        position: 'bottomleft',
+        maxLayersInRow: 5
+    }
+);
+
+// new L.Control.IconLayers(layers)
+// new L.Control.IconLayers(options)
+// are also ok
+
+iconLayersControl.addTo(mapid);
+
+// we can modify layers list
+iconLayersControl.setLayers(layers);
+
+iconLayersControl.on('activelayerchange', function(e) {
+    console.log('layer switched', e.layer);
+});
